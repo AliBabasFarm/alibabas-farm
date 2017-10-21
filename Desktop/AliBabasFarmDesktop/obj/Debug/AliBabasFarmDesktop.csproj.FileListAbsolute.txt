@@ -1,0 +1,12 @@
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\bin\Debug\Database1.mdf
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\bin\Debug\Database1_log.ldf
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.exe.config
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.exe
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.pdb
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.csprojResolveAssemblyReference.cache
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Properties.Resources.resources
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.csproj.GenerateResource.Cache
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.exe
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.pdb
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Login.resources
+c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Welcome.resources
