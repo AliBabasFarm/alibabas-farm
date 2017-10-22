@@ -10,16 +10,18 @@
 *.userprefs
 
 # Build results
-Desktop/AliBabasFarmDesktop/[Dd]ebug/
-Desktop/AliBabasFarmDesktop/[Dd]ebugPublic/
-Desktop/AliBabasFarmDesktop/[Rr]elease/
-Desktop/AliBabasFarmDesktop/[Rr]eleases/
-Desktop/AliBabasFarmDesktop/x64/
-Desktop/AliBabasFarmDesktop/x86/
-Desktop/AliBabasFarmDesktop/bld/
-Desktop/AliBabasFarmDesktop/[Bb]in/
-Desktop/AliBabasFarmDesktop/[Oo]bj/
-Desktop/AliBabasFarmDesktop/[Ll]og/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+**/bin/Debug/
 
 # Visual Studio 2015 cache/options directory
 .vs/
