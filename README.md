@@ -1,5 +1,5 @@
 # alibabas-farm
-Transportation Management Optimization
+<h1>Transportation Management Optimization</h1>
  
 This project is created by five stundent for BLG 411E Software Engineering course given on ITU Computer Engineering and Informatic Faculty 
 
@@ -81,10 +81,15 @@ Teams can use any development process, although agile methodologies are suggeste
 In order to track the project's activity and progress, the following rules should be followed: 
 
  For each major set of development tasks, a milestone characterizing them must be defined.
- For each development task, an issue describing it must be defined, within the corresponding milestone. 
+
+ For each development task, an issue describing it must be defined, within the corresponding milestone.
+ 
  Task granularity is up to the teams. For larger teams a small granularity is better (work units may be method implementations, method documentation/contract provision, unit tests for methods, etc.). 
+
  Prior to creating a new issue, users must check if the same issue has been previously created (important for large teams) to avoid work redundancy. 
+
  The use of branches for working on partial solutions or larger issues is recommended. 
+
  All users must make sure their partial solutions do not break the system (tests that passed before must still pass, project must compile, etc.). 
 
 
