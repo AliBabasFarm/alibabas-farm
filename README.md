@@ -2,42 +2,42 @@
 Transportation Management Optimization 
 This project is created by five stundent for BLG 411E Software Engineering course given on ITU Computer Engineering and Informatic Faculty 
 
-Project Description
+#Project Description
 A new small company that produce milk product such as milk, cheese, yoghurt and buttermilk, transports these products to a number of city and district weekly. The company has a truck capable of cooling.  This truck leave products at determined centers (pool points) for each city and district. Then, the other local marketing companies distribute to markets and delicatessens from centers.
 When the company leave extra products on centers in order to avoid overdelivery, it poses a problem about freshness due to the wasting more time until products come to consumer from the pool points. However the company would like to service fresh products to consumers. Therefore, the company deliver products according to orders from centers. In this way, the company services more fresh products to customers because there are more deliveries to pool points.  
 Every pool points may not give an order weekly. Most of time one truck has not a capacity to take all the orders so that truck has to come back manufacturing center and  take products again. If it shortens the path, the truck can leave extra products at some pool points on condition that take it later. 
 At center points (Manufacturing Center and Pool Points), because loading and unloading to the truck with a forklift takes too short time, this action time does not need to be taken into consideration at any operation. It will be assumed that at pool points there always be enough storage space. For delivery of brochures and promotional items, there may be a single truck to achieve transport to all centers.
 
-Objectives
+#Objectives
 Main purpose of this project is programming of shortest path that truck making way for weekly delivery. In this way, company reduces its expenditure and increases customer satisfaction so that gets more profit.
 
-Team Members
+#Team Members
 •	Okan YILDIRIM
 •	Fatih YIlMAZ
 •	Ali UÇAR
 •	Hasan Emre ARI
 •	Özgür AKTAŞ
 
-Stakeholders
+#Stakeholders
 •	Instructor Asst.Prof.Dr. Ayse TOSUN
 •	R.A. Müge Erel
 •	Team Members
 
-In scope
+#In scope
 •	Finding Shortest Path
 •	Service on Time (in 7 days)
 
-Out of Scope
+#Out of Scope
 •	Capacity Of Pool Points
 •	Expenditure Of Driver
 •	Loading - Unloading Time For Truck
 •	Direct Distribution To Costumers From Pool Points
 
-Preliminary Risks
+#Preliminary Risks
 •	Customer requests after the solution of the problem can invalidate the problem. This problem can affect the entire project.k
 •	Our solution for minimizing path may not be a best solution. 
 
-Details of Projocet
+#Details of Projocet
 A new small company that produce milk product such as milk, cheese, yoghurt and buttermilk, transports these products to a number of city and district weekly. The company has a truck capable of cooling.  This truck leaves products at determined centers (pool points) for each city and district. Then, the other local marketing companies distribute to markets and delicatessens from centers. 
 When the company leave extra products on centers in order to avoid more transportations, it poses a problem about freshness due to the wasting more time until products come to consumer from the pool points. However, the company would like to service fresh products to consumers. Therefore, the company deliver products according to orders from centers. In this way, the company services more fresh products to customers because there are more deliveries to pool points.   
 Every pool points may not give an order weekly. Most of time one truck has not a capacity to take all the orders so that truck has to come back manufacturing center and take products again. If it shortens the path, the truck can leave extra products at some pool points on condition that take it later. 
