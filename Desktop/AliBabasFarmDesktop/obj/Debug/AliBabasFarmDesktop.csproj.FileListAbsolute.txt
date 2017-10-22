@@ -10,3 +10,16 @@ c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBaba
 c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.pdb
 c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Login.resources
 c:\users\lapto\documents\visual studio 2017\Projects\AliBabasFarmDesktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Welcome.resources
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\bin\Debug\Database1.mdf
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\bin\Debug\Database1_log.ldf
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.exe.config
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.exe
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\bin\Debug\AliBabasFarmDesktop.pdb
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.csprojResolveAssemblyReference.cache
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Login.resources
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Welcome.resources
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Properties.Resources.resources
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.csproj.GenerateResource.Cache
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.exe
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.pdb
+C:\Users\lapto\Source\Repos\alibabas-farm\Desktop\AliBabasFarmDesktop\obj\Debug\AliBabasFarmDesktop.Main.resources
