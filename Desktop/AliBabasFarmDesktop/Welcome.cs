@@ -23,5 +23,12 @@ namespace AliBabasFarmDesktop
             Login login = new Login();
             login.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Signup signup = new Signup();
+            signup.Show();
+        }
     }
 }
