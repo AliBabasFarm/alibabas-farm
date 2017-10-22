@@ -17,17 +17,17 @@ namespace AliBabasFarmDesktop
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void signUpButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Signup signup = new Signup();
+            Signup signup= new Signup();
             signup.Show();
         }
     }

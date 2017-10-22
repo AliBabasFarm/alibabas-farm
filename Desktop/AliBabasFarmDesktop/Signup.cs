@@ -16,5 +16,10 @@ namespace AliBabasFarmDesktop
         {
             InitializeComponent();
         }
+
+        private void Signup_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
