@@ -26,12 +26,12 @@ namespace Direction_optimized
         {
             LoadSampleMap();
             KruskalAlgoritm();
-            WritetoListbox();
+            //WritetoListbox();
         }
 
         private void WritetoListbox()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void KruskalAlgoritm()
@@ -44,15 +44,15 @@ namespace Direction_optimized
 
             for(int i=0;i<Sortedmap.Count;i++)
             {
-                if (InsertedCity.IndexOf(Sortedmap[i].p1_name) <= 0 || InsertedCity.IndexOf(Sortedmap[i].p2_name) <= 0)
+                if (InsertedCity.IndexOf(Sortedmap[i].p1_name) < 0 || InsertedCity.IndexOf(Sortedmap[i].p2_name) < 0)
                 {
                     
                     SelectedEdge.Add(Sortedmap[i]);
-                    if(InsertedCity.IndexOf(Sortedmap[i].p1_name) <= 0)
+                    if(InsertedCity.IndexOf(Sortedmap[i].p1_name) < 0)
                     InsertedCity.Add(Sortedmap[i].p1_name);
-                    if (InsertedCity.IndexOf(Sortedmap[i].p2_name) <= 0)
+                    if (InsertedCity.IndexOf(Sortedmap[i].p2_name) < 0)
                         InsertedCity.Add(Sortedmap[i].p2_name);
-                    distance += SelectedEdge[i].distance;
+                    distance += Sortedmap[i].distance;
 
                 }
                 if (InsertedCity.Count == cities.Count)
@@ -60,6 +60,11 @@ namespace Direction_optimized
                 
             }
 
+            for (int i = 0; i < SelectedEdge.Count; i++)
+            { 
+                listBox1.Items.Add(SelectedEdge[i].p1_name + SelectedEdge[i].p2_name + " " + SelectedEdge[i].distance);
+            }
+            label1.Text += distance.ToString();
 
 
 

@@ -39,13 +39,13 @@
             this.listBox1.Location = new System.Drawing.Point(83, 25);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(183, 84);
+            this.listBox1.Size = new System.Drawing.Size(470, 244);
             this.listBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 124);
+            this.label1.Location = new System.Drawing.Point(79, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 1;
@@ -56,7 +56,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1257, 244);
+            this.ClientSize = new System.Drawing.Size(1257, 318);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
