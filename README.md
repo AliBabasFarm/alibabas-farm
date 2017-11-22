@@ -64,7 +64,7 @@ Main purpose of this project is programming of shortest path that truck making w
 •	Our solution for minimizing path may not be a best solution. 
 
 
-<h3>Details of Projocet</h3>
+<h3>Details of Project</h3>
 
 A new small company that produce milk product such as milk, cheese, yoghurt and buttermilk, transports these products to a number of city and district weekly. The company has a truck capable of cooling.  This truck leaves products at determined centers (pool points) for each city and district. Then, the other local marketing companies distribute to markets and delicatessens from centers. 
 When the company leave extra products on centers in order to avoid more transportations, it poses a problem about freshness due to the wasting more time until products come to consumer from the pool points. However, the company would like to service fresh products to consumers. Therefore, the company deliver products according to orders from centers. In this way, the company services more fresh products to customers because there are more deliveries to pool points.   
