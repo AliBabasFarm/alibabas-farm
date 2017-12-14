@@ -133,7 +133,7 @@ namespace Direction_optimized
                 total += _orders[i].The_number_of_milk_p;
                 total += _orders[i].The_number_of_yogurt_p;
             }
-            result = (int)Math.Ceiling((double)(total / Capacity));
+            result = (int)Math.Ceiling((double)((double)total / (double)Capacity));
             
 
             return result;
@@ -148,61 +148,173 @@ namespace Direction_optimized
             List<Path>[] Path = new List<Path>[n];
             Random rnd = new Random();
             int[] centers = new int[x];
+            int[] cl_capacity = new int[x];
 
             int index;
+            int oindex;
 
             //bool[] ass = new bool[n];
 
             //random cluster
             int y;
+            Order temp_order;
+            for (int i = 0; i < x; i++)
+            {
+                orderCluster[i] = new List<Order>();
+                temporderCluster[i] = new List<Order>();
+            }
             for (int i=0;i<n;i++)
             {
+                temp_order = new Order();
+                temp_order = _orders[i];
                 y=rnd.Next(0, x);
-                orderCluster[y].Add(_orders[i]);
+
+                orderCluster[y].Add(temp_order);
             }
             bool sat = false;
+            bool sat1 = false;
+            bool sat2 = false;
+            int iteration = -1;
             int max = 0;
             int dist;
+            int truck_capacity;
+            
             int changeset = -1;
             int temp_dist = 0;
-            while(!sat)
-            {
-                for (int i = 0; i < n; i++)
+            Order tmp_order2;
+
+                while (!sat1)
                 {
-                    for (int j = 0; j < (orderCluster[i].Count);j++)
+                    iteration += 1;
+                    for (int i = 0; i < x; i++)
                     {
-                        index=get_index((orderCluster[i])[j].City);
-                        dist=DijkstraAlgoSinglewithTarget(big_matrix, 0, index,_cities.Count);
-                        if(dist>max)
+                        for (int j = 0; j < (orderCluster[i].Count); j++)
                         {
-                            max = dist;
-                            centers[i] = index;
+                            index = get_index((orderCluster[i])[j].City);
+                            dist = DijkstraAlgoSinglewithTarget(big_matrix, 0, index, _cities.Count);
+                            if (dist > max)
+                            {
+                                max = dist;
+                                centers[i] = index;
+                            }
+                        }
+                        max = 0;
+                        dist = 0;
+                    }
+
+                    for (int i = 0; i < x; i++)
+                    {
+                        for (int j = 0; j < (orderCluster[i].Count); j++)
+                        {
+                            oindex = get_oindex((orderCluster[i])[j].City);
+                            index = get_index((orderCluster[i])[j].City);
+                            dist = DijkstraAlgoSinglewithTarget(big_matrix, index, centers[i], _cities.Count);
+                            for (int k = 0; k < centers.Length; k++)
+                            {
+                                dista[oindex, k] = DijkstraAlgoSinglewithTarget(big_matrix, index, centers[k], _cities.Count);
+
+                            }
                         }
                     }
-                    max = 0;
-                    dist = 0;
-                }
 
-                for (int i = 0; i < n; i++)
-                {
-                    for (int j = 0; j < (orderCluster[i].Count); j++)
+                    for (int i = 0; i < x; i++)
+                        orderCluster[i].Clear();
+                    int min;
+                    int cl;
+
+                    for (int i = 0; i < dista.Length / x; i++)
                     {
-                        index = get_index((orderCluster[i])[j].City);
-                        dist = DijkstraAlgoSinglewithTarget(big_matrix, index, centers[i], _cities.Count);
-                        for (int k = 0; k < centers.Length; k++)
+                        min = dista[i, 0];
+                        cl = 0;
+                        for (int j = 0; j < x; j++)
                         {
-                            dista[index, k] = DijkstraAlgoSinglewithTarget(big_matrix, index, centers[k], _cities.Count);
-                            
-                        }                 
+                            if (dista[i, j] < min)
+                            {
+                                min = dista[i, j];
+                                cl = j;
+                            }
+                        }
+                        temp_order = new Order();
+                        temp_order = _orders[i];
+                        orderCluster[cl].Add(temp_order);
+
+                    }
+                    if(!(iteration==0))
+                    {
+                        if (CompareOrderCluster(orderCluster, temporderCluster,x))
+                            sat1 = true;
+                    }
+                    for (int i = 0; i < x; i++)
+                    {
+                        temporderCluster[i] = new List<Order>();
+                        temporderCluster[i] = orderCluster[i];
+
                     }
                 }
-
-                for(int i=0;i<dista.Length;i++)
+                cl_capacity = new int[x];
+                for (int i = 0; i < x; i++)
                 {
+                    for (int j = 0; j < orderCluster[i].Count; j++)
+                    {
+                        cl_capacity[i] += (orderCluster[i])[j].The_number_of_cheese_p + (orderCluster[i])[j].The_number_of_milk_p + (orderCluster[i])[j].The_number_of_yogurt_p;
+                    }
+                }
+                for(int i = 0; i < x; i++)
+                {
+                    if(cl_capacity[i]>capacity)
+                    {
+                        sat1 = false;
+                        int ro=findFarElement(orderCluster[i], centers[i]);
+                        tmp_order2 = new Order();
+                        tmp_order2 = (orderCluster[i])[ro];
+                        orderCluster[i].RemoveAt(ro);
+                        int new_c;
+                        new_c = rnd.Next(0, x);
+                        while (!(new_c == i))
+                            orderCluster[new_c].Add(tmp_order2);
+                        break;
+                    }
+                if (iteration >= 1000)
+                    sat1 = true;
 
                 }
-                    }
             return orderCluster;
+        }
+
+        private int findFarElement(List<Order> c1,int center)
+        {
+            int result = -1;
+            int dist = -1;
+            int value;
+            for(int i=0;i<c1.Count; i++)
+            {
+                value = DijkstraAlgoSinglewithTarget(big_matrix, center, get_index(c1[i].City), _cities.Count);
+                if (value > dist)
+                    result = i;
+            }
+
+            return result;
+        }
+
+        private bool CompareOrderCluster(List<Order>[] c1, List<Order>[] c2,int x)
+        {
+            bool result = false;
+            for(int i=0;i<x;i++)
+            {
+                if(c1[i].Count!=c2[i].Count)
+                {
+                    return false;
+                }
+                
+                for(int j=0;j<c1[i].Count;j++)
+                {
+                    if ((c1[i])[j].City != (c2[i])[j].City)
+                        return false;
+                }
+                return true;
+            }
+
+            return result;
         }
 
         private void FillMatrix()
@@ -241,35 +353,42 @@ namespace Direction_optimized
         public void Optimization()
         {
             FillMatrix();
-            //int numberofCluster = DecideClusterNumber();
-            //List<Order>[] OrderCluster = Cluster(numberofCluster);
-
-
-            CreateEliminatedMap();
-
-            FullFillArray();
-            Minimize(0);//TSP , fills the travel_order
-            List<Path> path;
-            int yt;
+            int numberofCluster = DecideClusterNumber();
+            List<Order>[] OrderCluster = Cluster(numberofCluster);
             Story = new List<string>();
-            for (int i = 0; i < travel_order.Count - 1; i++)
+            for (int c = 0; c < OrderCluster.Length; c++)
             {
-                string s1 = "Go from City " + Cities[convert_index(travel_order[i] - 1)] + "to City " + Cities[convert_index(travel_order[i + 1] - 1)];
-                Story.Add(s1);
-                path = DijkstraAlgo(big_matrix, convert_index(travel_order[i] - 1), convert_index(travel_order[i + 1] - 1), _cities.Count);
-                for (int j = path.Count-1; j>=0; j--)
-                {
-                    string s2 = "   Use Path from " + Cities[path[j].p1] + "to City " + Cities[path[j].p2];
-                    Story.Add(s2);
-                }
-                yt = FindOrderbyName(Cities[convert_index(travel_order[i + 1] - 1)]);
-                if (yt != -1)
-                {
-                    string s3 = "#####Leave the Pool Point Order; Cheese:" + _orders[yt].The_number_of_cheese_p.ToString() + "Yogurt: " + _orders[yt].The_number_of_yogurt_p.ToString() + " Milk: " + _orders[yt].The_number_of_milk_p.ToString();
-                    Story.Add(s3);
-                }
+                _orders = OrderCluster[c];
+                CreateEliminatedMap();
 
+                FullFillArray();
+                travel_order = new List<int>();
+                Minimize(0);//TSP , fills the travel_order
+                List<Path> path;
+                int yt;
+                Story.Add((c + 1).ToString()+". Transportation");
+                for (int i = 0; i < travel_order.Count - 1; i++)
+                {
+                    string s1 = "Go from City " + Cities[convert_index(travel_order[i] - 1)] + " to City " + Cities[convert_index(travel_order[i + 1] - 1)];
+                    Story.Add(s1);
+                    path = DijkstraAlgo(big_matrix, convert_index(travel_order[i] - 1), convert_index(travel_order[i + 1] - 1), _cities.Count);
+                    for (int j = path.Count - 1; j >= 0; j--)
+                    {
+                        string s2 = "   Use Path from " + Cities[path[j].p1] + "to City " + Cities[path[j].p2];
+                        Story.Add(s2);
+                    }
+                    yt = FindOrderbyName(Cities[convert_index(travel_order[i + 1] - 1)]);
+                    if (yt != -1)
+                    {
+                        string s3 = "#####Leave the Pool Point Order; Cheese:" + _orders[yt].The_number_of_cheese_p.ToString() + "Yogurt: " + _orders[yt].The_number_of_yogurt_p.ToString() + " Milk: " + _orders[yt].The_number_of_milk_p.ToString();
+                        Story.Add(s3);
+                    }
+
+                }
             }
+
+
+
             finish = true;
 
 
@@ -285,6 +404,17 @@ namespace Direction_optimized
             for(int i=0;i<_cities.Count;i++)
             {
                 if (_cities[i] == c)
+                    return i;
+            }
+
+            return result;
+        }
+        private int get_oindex(string c)
+        {
+            int result = 0;
+            for (int i = 0; i < _orders.Count; i++)
+            {
+                if (_orders[i].City == c)
                     return i;
             }
 
@@ -599,7 +729,7 @@ namespace Direction_optimized
             visited[city] = 1;
             travel_order.Add(c+1);
             ncity = travel_least(city);
-
+            
             if(ncity==999)
             {
                 ncity = 0;

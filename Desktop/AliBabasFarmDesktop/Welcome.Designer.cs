@@ -73,6 +73,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(204, 29);
             this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Welcome
             // 

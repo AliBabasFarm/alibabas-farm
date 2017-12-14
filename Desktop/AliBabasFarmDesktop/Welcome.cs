@@ -64,6 +64,26 @@ namespace AliBabasFarmDesktop
             }
         }
 
+        public void PassGotFocus(Object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.Text == "Password")
+            {
+                tb.Text = "";
+                tb.ForeColor = Color.Black;
+            }
+        }
+
+        public void PassLostFocus(Object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.Text == "")
+            {
+                tb.Text = "Password";
+                tb.ForeColor = Color.LightGray;
+            }
+        }
+
         private void Welcome_Load_1(object sender, EventArgs e)
         {
             try
@@ -74,7 +94,7 @@ namespace AliBabasFarmDesktop
                 }
                 else
                 {
-                    MessageBox.Show("Maalesef Bağlantı Yapılamadı...!");
+                    MessageBox.Show("Unable to connect!");
                 }
             }
             catch (Exception err)
@@ -87,6 +107,9 @@ namespace AliBabasFarmDesktop
             textBoxUsername.Text = "Username or E-Mail";
             textBoxUsername.ForeColor = Color.LightGray;
             textBoxUsername.TextAlign = HorizontalAlignment.Center;
+
+            textBoxPassword.GotFocus += new EventHandler(this.PassGotFocus);
+            textBoxPassword.LostFocus += new EventHandler(this.PassLostFocus);
         }
     }
 }
